@@ -28,7 +28,10 @@ const Post = ({ post, postedBy }) => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const res = await fetch(`/api/users/profile/` + postedBy);
+        const res = await fetch(
+          `https://mern-stack-thread-backend.vercel.app/api/users/profile/` +
+            postedBy
+        );
         const data = await res.json();
         if (data.error) {
           showToast("error", data.error, "error");
@@ -48,9 +51,12 @@ const Post = ({ post, postedBy }) => {
     try {
       e.preventDefault();
       if (!window.confirm("Are you really want to delete post ?")) return;
-      const res = await fetch("/api/posts/" + post._id, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        "https://mern-stack-thread-backend.vercel.app/api/posts/" + post._id,
+        {
+          method: "DELETE",
+        }
+      );
       const data = await res.json();
       if (data.error) {
         showToast("error", data.error, "error");

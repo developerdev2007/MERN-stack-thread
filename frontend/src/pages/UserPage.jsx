@@ -21,7 +21,9 @@ const UserPage = () => {
       if (!user) return;
       setFetchingPosts(true);
       try {
-        const res = await fetch(`/api/posts/user/${username}`);
+        const res = await fetch(
+          `https://mern-stack-thread-backend.vercel.app/api/posts/user/${username}`
+        );
         const data = await res.json();
         if (data.error) {
           showToast("error", data.error, "error");

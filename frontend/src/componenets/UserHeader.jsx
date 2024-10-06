@@ -41,12 +41,15 @@ const UserHeader = ({ user }) => {
     }
     setUpdating(true);
     try {
-      const res = await fetch(`/api/users/follow/${user._id}`, {
-        method: "POST",
-        header: {
-          "Content-Type": "application/json",
-        },
-      });
+      const res = await fetch(
+        `https://mern-stack-thread-backend.vercel.app/api/users/follow/${user._id}`,
+        {
+          method: "POST",
+          header: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const data = await res.json();
       if (data.error) {
         showToast("error", data.error, "error");

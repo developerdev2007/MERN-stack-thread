@@ -34,7 +34,9 @@ const PostPage = () => {
     const getPosts = async () => {
       setPosts([]);
       try {
-        const res = await fetch(`/api/posts/${pid}`);
+        const res = await fetch(
+          `https://mern-stack-thread-backend.vercel.app/api/posts/${pid}`
+        );
         const data = await res.json();
         if (data.error) {
           showToast("error", data.error, "error");
@@ -51,9 +53,13 @@ const PostPage = () => {
   const handleDeletePost = async () => {
     try {
       if (!window.confirm("Are you really want to delete post ?")) return;
-      const res = await fetch("/api/posts/" + currentPost._id, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        "https://mern-stack-thread-backend.vercel.app/api/posts/" +
+          currentPost._id,
+        {
+          method: "DELETE",
+        }
+      );
       const data = await res.json();
       if (data.error) {
         showToast("error", data.error, "error");
