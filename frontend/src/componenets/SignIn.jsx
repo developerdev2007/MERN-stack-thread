@@ -39,6 +39,9 @@ export default function SignUp() {
       const res = await fetch(
         "https://mern-stack-thread-backend.vercel.app/api/users/login",
         {
+          credentials: "include",
+        },
+        {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
