@@ -22,7 +22,8 @@ const UserPage = () => {
       setFetchingPosts(true);
       try {
         const res = await fetch(
-          `https://mern-stack-thread-backend.vercel.app/api/posts/user/${username}`
+          `https://mern-stack-thread-backend.vercel.app/api/posts/user/${username}`,
+          { credentials: "include" }
         );
         const data = await res.json();
         if (data.error) {

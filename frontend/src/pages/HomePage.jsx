@@ -19,7 +19,8 @@ const HomePage = () => {
       setPosts([]);
       try {
         const res = await fetch(
-          "https://mern-stack-thread-backend.vercel.app/api/posts/feed"
+          "https://mern-stack-thread-backend.vercel.app/api/posts/feed",
+          { credentials: "include" }
         );
         const data = await res.json();
         if (data.error) {

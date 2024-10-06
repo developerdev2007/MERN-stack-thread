@@ -30,7 +30,8 @@ const Post = ({ post, postedBy }) => {
       try {
         const res = await fetch(
           `https://mern-stack-thread-backend.vercel.app/api/users/profile/` +
-            postedBy
+            postedBy,
+          { credentials: "include" }
         );
         const data = await res.json();
         if (data.error) {
@@ -55,6 +56,7 @@ const Post = ({ post, postedBy }) => {
         "https://mern-stack-thread-backend.vercel.app/api/posts/" + post._id,
         {
           method: "DELETE",
+          credentials: "include",
         }
       );
       const data = await res.json();

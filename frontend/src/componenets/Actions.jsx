@@ -45,11 +45,13 @@ const Actions = ({ post }) => {
       const res = await fetch(
         "https://mern-stack-thread-backend.vercel.app/api/posts/like/" +
           post._id,
+
         {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
+          credentials: "include",
         }
       );
       const data = await res.json();
@@ -101,6 +103,7 @@ const Actions = ({ post }) => {
           headers: {
             "Content-Type": "application/json",
           },
+          credentials: "include",
           body: JSON.stringify({ text: reply }),
         }
       );

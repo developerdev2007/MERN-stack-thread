@@ -35,7 +35,8 @@ const PostPage = () => {
       setPosts([]);
       try {
         const res = await fetch(
-          `https://mern-stack-thread-backend.vercel.app/api/posts/${pid}`
+          `https://mern-stack-thread-backend.vercel.app/api/posts/${pid}`,
+          { credentials: "include" }
         );
         const data = await res.json();
         if (data.error) {

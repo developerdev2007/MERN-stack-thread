@@ -13,7 +13,8 @@ const useGetUserProfile = () => {
       setLoading(true);
       try {
         const res = await fetch(
-          `https://mern-stack-thread-backend.vercel.app/api/users/profile/${username}`
+          `https://mern-stack-thread-backend.vercel.app/api/users/profile/${username}`,
+          { credentials: "include" }
         );
         const data = await res.json();
         if (data.error) {

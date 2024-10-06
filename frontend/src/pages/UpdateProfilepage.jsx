@@ -45,6 +45,7 @@ const UpdateProfilePage = () => {
           headers: {
             "Content-Type": "application/json",
           },
+          credentials: "include",
           body: JSON.stringify({ ...inputs, profilePic: imgUrl }),
         }
       );
