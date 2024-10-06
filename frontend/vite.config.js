@@ -11,7 +11,7 @@ export default defineConfig({
       "/api": {
         target: "https://mern-stack-thread-backend.vercel.app",
         changeOrigin: true,
-        secure: false,
+        secure: true,
       },
     },
   },
