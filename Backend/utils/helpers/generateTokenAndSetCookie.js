@@ -6,8 +6,9 @@ const generateTokenAndSetCookie = (userId, res) => {
   });
   res.cookie("jwt", token, {
     httpOnly: true, //for security
+    secure: process.env.NODE_ENV === "production",
     maxAge: 3 * 24 * 60 * 60 * 1000, //3d
-    // sameSite: "strict", //CSRF
+    sameSite: "none", //CSRF
   });
   return token;
 };

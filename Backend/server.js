@@ -21,8 +21,8 @@ cloudinary.config({
 app.use(
   cors({
     origin: "*",
-    credentials: "",
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+    // methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 app.use(express.json({ limit: "50mb" }));
