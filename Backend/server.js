@@ -20,7 +20,7 @@ cloudinary.config({
 ///////////////////middlewares
 app.use(
   cors({
-    origin: "https://mern-stack-thread-frontend.vercel.app/auth",
+    origin: "https://mern-stack-thread-frontend.vercel.app/",
     // credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
